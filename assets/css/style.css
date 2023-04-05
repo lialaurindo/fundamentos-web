@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* o . é para chamar a classe */
+/* criar distanciamente entre os itens sem usar a margem */
+/* justify content alinha na horizontal */
+
+.navbar {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none
+}
+
+/* se colo só um valor na margem, considera-se para todos os lados | ordem no sentido horário superior, direita, inferior, esquerda */
+
+.navbar a {
+    text-decoration: none;
+    margin: 10px
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkkhaki;
+    width: 75%;
+    margin: 0 auto;
+}
+
+img {
+    width: 25%;
+}
+
+.video {
+    width: 75%;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+    display: block;
+}
