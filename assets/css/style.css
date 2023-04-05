@@ -1,44 +1,199 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap');
+
+/* reset básico de css, só pra garantir que todos os navegadores abram a pagina por igual */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  10. Remove links decorations and colors
+*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --background: #1CCFFE;
+  --black: #020200;
+  --dark-yellow: #dbb778;
+  --gray-yellow: #A8F862;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Noto Sans', sans-serif;
+  }
 
 /* o . é para chamar a classe */
 /* criar distanciamente entre os itens sem usar a margem */
 /* justify content alinha na horizontal */
 
-.navbar {
-    font-size: 32px;
+
+nav ul {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    list-style: none
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.75rem;
+    color: var(--black);
+    justify-content: flex-end;
+    margin-right: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  nav ul li a:hover {
+    color: var(--dark-yellow);
+    transition: color 0.3s;
+  }
+
+  main {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  h1,
+h2 {
+  text-align: center;
+  font-size: 3.5rem;
 }
 
-/* se colo só um valor na margem, considera-se para todos os lados | ordem no sentido horário superior, direita, inferior, esquerda */
-
-.navbar a {
-    text-decoration: none;
-    margin: 10px
+h2 {
+  font-size: 2.5rem;
 }
 
 .banner {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: darkkhaki;
-    width: 75%;
-    margin: 0 auto;
-}
+    background-color: var(--gray-yellow);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
 
-img {
-    width: 25%;
-}
+.textos {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-weight: 300;
+  }
+
+
+.imagemResponsiva{
+    width: max(250px, 25%);
+    object-fit: contain;
+  }
+
 
 .video {
-    width: 75%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+.video iframe {
+    width: 100%;
+        /* aspect-ratio serve para manter a proporção do elemento, como uma foto ou uma tela de TV */
     aspect-ratio: 16/9;
-    margin: 0 auto;
-    display: block;
-}
+    border-radius: 16px;
+  }
+  
+  footer {
+    text-align: center;
+    border-top: 2px solid var(--dark-yellow);
+    margin-top: 2rem;
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      justify-content: center;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1rem;
+    }
+  
+    .banner {
+      flex-direction: column-reverse;
+    }
+  
+    .mainFlex {
+      flex-direction: column;
+    }
+  
+    .left form {
+      width: 100%;
+    }
+  }
